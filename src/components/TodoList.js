@@ -15,7 +15,7 @@ const TodoList = (props) => {
                     props.itemsCompleted()
                 }
             } >
-                Delete Completed Item
+                Delete Marked Item(s)
             </button>
         </div>
     );

@@ -68,17 +68,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Todo List: MVP</h2>
-        <TodoList
-          toggleItem={this.toggleItem}
-          todos={this.state.todos}
-          itemsCompleted={this.itemsCompleted}
-        />
-        <div>
-          <TodoForm addItem={this.addItem} />
-        </div>
-      </div>
+      <section className='todoListBG'>
+          <div className='todoList'>
+            <h1>Todo List: MVP</h1>
+            <p>(Click listed item to mark for deletion)</p>
+            <TodoList
+              toggleItem={this.toggleItem}
+              todos={this.state.todos}
+              itemsCompleted={this.itemsCompleted}
+            />
+            <div>
+              <TodoForm addItem={this.addItem} />
+            </div>
+          </div>
+      </section>
     );
   }
 }

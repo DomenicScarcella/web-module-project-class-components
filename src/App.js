@@ -1,4 +1,5 @@
 import React from 'react';
+import './components/Todo.css';
 
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
@@ -27,7 +28,6 @@ class App extends React.Component {
     super();
     this.state = {
       todos: todos,
-      count: 0,
     };
   }
   // design `App` to be the parent component of your application.
@@ -58,6 +58,14 @@ class App extends React.Component {
     });
   };
 
+  itemsCompleted = () => {
+    this.setState({
+      todos: this.state.todos.filter((item) => {
+        return (!item.completed);
+      })
+    });
+  };
+
   render() {
     return (
       <div>
@@ -65,6 +73,7 @@ class App extends React.Component {
         <TodoList
           toggleItem={this.toggleItem}
           todos={this.state.todos}
+          itemsCompleted={this.itemsCompleted}
         />
         <div>
           <TodoForm addItem={this.addItem} />

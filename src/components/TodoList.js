@@ -10,7 +10,11 @@ const TodoList = (props) => {
             {props.todos.map((item) => (
                 <Todo key={item.id} item={item} toggleItem={props.toggleItem} />
             ))}
-            <button>
+            <button onClick={
+                () => {
+                    props.itemsCompleted()
+                }
+            } >
                 Delete Completed Item
             </button>
         </div>
